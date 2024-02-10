@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  cliente-microservicio:
+    build: ./cliente-micro-service
+    ports:
+      - "8080:8080"
+    environment:
+      DATABASE_HOST: mysql-db-cliente
+    depends_on:
+      - mysql-db-cliente
+
+  cuenta-microservicio:
+    build: ./cuenta-micro-service
+    ports:
+      - "8081:8081"
+    environment:
+      DATABASE_HOST: mysql-db-cuenta
+    depends_on:
+      - mysql-db-cuenta
+
+  mysql-db-cliente:
+    image: mysql:8.0.32
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cliente_db
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data-cliente:/var/lib/mysql
+
+  mysql-db-cuenta:
+    image: mysql:8.0.32
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cuenta_db
+    ports:
+      - "3308:3306"
+    volumes:
+      - mysql-data-cuenta:/var/lib/mysql
+
+volumes:
+  mysql-data-cliente:
+  mysql-data-cuenta:

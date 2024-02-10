@@ -1,0 +1,393 @@
+{
+	"info": {
+		"_postman_id": "593a460e-6c28-4adc-be86-e4ec089c1150",
+		"name": "Devsu TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10544447"
+	},
+	"item": [
+		{
+			"name": "Lista de Cuentas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/cuentas",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"cuentas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Lista de Cuentas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/cuentas",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"cuentas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Feb 2024 21:08:06 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"cuentaId\": 1,\n        \"numeroCuenta\": 478758,\n        \"tipoCuenta\": \"Ahorros\",\n        \"saldoInicial\": 2000,\n        \"estado\": true,\n        \"clienteId\": 1\n    },\n    {\n        \"cuentaId\": 2,\n        \"numeroCuenta\": 225487,\n        \"tipoCuenta\": \"Corriente\",\n        \"saldoInicial\": 100,\n        \"estado\": true,\n        \"clienteId\": 2\n    },\n    {\n        \"cuentaId\": 3,\n        \"numeroCuenta\": 495878,\n        \"tipoCuenta\": \"Ahorros\",\n        \"saldoInicial\": 0,\n        \"estado\": true,\n        \"clienteId\": 3\n    },\n    {\n        \"cuentaId\": 4,\n        \"numeroCuenta\": 585545,\n        \"tipoCuenta\": \"Corriente\",\n        \"saldoInicial\": 1000,\n        \"estado\": true,\n        \"clienteId\": 1\n    },\n    {\n        \"cuentaId\": 5,\n        \"numeroCuenta\": 496825,\n        \"tipoCuenta\": \"Ahorros\",\n        \"saldoInicial\": 540,\n        \"estado\": true,\n        \"clienteId\": 2\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Reporte",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/reportes?clienteId=2&fechaInicio=2022-01-01&fechaFin=2022-02-28",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"reportes"
+					],
+					"query": [
+						{
+							"key": "clienteId",
+							"value": "2"
+						},
+						{
+							"key": "fechaInicio",
+							"value": "2022-01-01"
+						},
+						{
+							"key": "fechaFin",
+							"value": "2022-02-28"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Reporte",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/reportes?clienteId=2&fechaInicio=2022-01-01&fechaFin=2022-02-28",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"reportes"
+							],
+							"query": [
+								{
+									"key": "clienteId",
+									"value": "2"
+								},
+								{
+									"key": "fechaInicio",
+									"value": "2022-01-01"
+								},
+								{
+									"key": "fechaFin",
+									"value": "2022-02-28"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Feb 2024 21:08:33 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"clienteId\": 2,\n    \"nombreCliente\": \"Marianela Montalvo\",\n    \"cuentas\": [\n        {\n            \"numeroCuenta\": 225487,\n            \"tipoCuenta\": \"Corriente\",\n            \"saldoInicial\": 100,\n            \"movimientos\": [\n                {\n                    \"fecha\": \"2022-02-10\",\n                    \"tipoMovimiento\": \"Depósito de 600\",\n                    \"valor\": 600,\n                    \"saldoPostMovimiento\": 700\n                }\n            ]\n        },\n        {\n            \"numeroCuenta\": 496825,\n            \"tipoCuenta\": \"Ahorros\",\n            \"saldoInicial\": 540,\n            \"movimientos\": [\n                {\n                    \"fecha\": \"2022-02-08\",\n                    \"tipoMovimiento\": \"Retiro de 540\",\n                    \"valor\": -540,\n                    \"saldoPostMovimiento\": 0\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Lista de Movimientos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/movimientos",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"movimientos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Lista de Movimientos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/movimientos",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"movimientos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Feb 2024 21:08:58 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"movimientoId\": 2,\n        \"fecha\": \"2022-02-10T10:00:00.000+00:00\",\n        \"tipoMovimiento\": \"Depósito de 600\",\n        \"valor\": 600,\n        \"saldo\": 700,\n        \"cuenta\": {\n            \"cuentaId\": 2,\n            \"numeroCuenta\": 225487,\n            \"tipoCuenta\": \"Corriente\",\n            \"saldoInicial\": 100,\n            \"estado\": true,\n            \"clienteId\": 2\n        }\n    },\n    {\n        \"movimientoId\": 3,\n        \"fecha\": \"2022-02-08T10:00:00.000+00:00\",\n        \"tipoMovimiento\": \"Retiro de 540\",\n        \"valor\": -540,\n        \"saldo\": 0,\n        \"cuenta\": {\n            \"cuentaId\": 5,\n            \"numeroCuenta\": 496825,\n            \"tipoCuenta\": \"Ahorros\",\n            \"saldoInicial\": 540,\n            \"estado\": true,\n            \"clienteId\": 2\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Crear un Movimiento",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fecha\": \"2022-02-08T10:00:00\",\r\n    \"tipoMovimiento\": \"Retiro de 540\",\r\n    \"valor\": -540,\r\n    \"cuenta\": {\r\n        \"cuentaId\": 5,\r\n        \"numeroCuenta\": 496825\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/movimientos",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"movimientos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista de Clientes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/clientes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Lista de Clientes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/clientes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Feb 2024 21:09:09 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"identificacion\": 1,\n        \"nombre\": \"Jose Lema\",\n        \"genero\": null,\n        \"edad\": null,\n        \"direccion\": \"Otavalo sn y principal\",\n        \"telefono\": \"098254785\",\n        \"clienteId\": 1,\n        \"contrasenha\": \"1234\",\n        \"estado\": true\n    },\n    {\n        \"identificacion\": 2,\n        \"nombre\": \"Marianela Montalvo\",\n        \"genero\": null,\n        \"edad\": null,\n        \"direccion\": \"Amazonas y NNUU\",\n        \"telefono\": \"097548965\",\n        \"clienteId\": 2,\n        \"contrasenha\": \"5678\",\n        \"estado\": true\n    },\n    {\n        \"identificacion\": 3,\n        \"nombre\": \"Juan Osorio\",\n        \"genero\": null,\n        \"edad\": null,\n        \"direccion\": \"13 junio y Qeuinoccial\",\n        \"telefono\": \"098874582\",\n        \"clienteId\": 3,\n        \"contrasenha\": \"1245\",\n        \"estado\": true\n    }\n]"
+				}
+			]
+		}
+	]
+}
